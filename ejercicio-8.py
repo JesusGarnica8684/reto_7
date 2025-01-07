@@ -14,13 +14,13 @@ def factorial (n : int) -> int:
 if __name__=="__main__":
     num = int(input("Ingrese cuantos términos de la serie de Taylor que desea calcular: "))
     pot = int(input("Ingrese la potencia de la función exponencial: ")) #potencia 
-    fexp : float = math.e**pot 
+    fexp : float = math.exp(pot)
     sum : float = 0
 
     for i in range (0, num+1):# por medio del ciclo for se hara la sumatoria 
         ndor : float = pot**i 
         dnom : float = factorial(i)
         div : float = ndor/dnom
-        sum = sum + div 
+        sum = div + sum 
         print ("Termino ", i, " de la serie de Taylor: ", sum)
     print (fexp, "-", sum,"=", fexp-sum)
